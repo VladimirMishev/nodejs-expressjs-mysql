@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Post title' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main id="post-detail">
+    <h1><%= post.title %></h1>
+    <section id="post-meta">
+      <address><a href="mailto:<%= post.author_email %>"><%= post.author_name %></a></address>
+      <time value="<%= post.date %>"><%= post.humanReadableDate %></time>
+    </section>
+    <hr>
+    <section>
+      <p id="body"><strong>Summary:</strong> <%= post.body %> <hr><strong>Body:</strong> <%= post.body %></p>
+    </section>
+  </main>
+</body>
+
+</html>
